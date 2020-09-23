@@ -1,0 +1,13 @@
+{
+  "name": "end-to-end-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "^26.5.3",
+    "jest-puppeteer": "^4.4.0"
+  }
+}

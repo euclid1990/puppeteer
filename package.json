@@ -1,0 +1,31 @@
+{
+  "name": "puppeteer",
+  "version": "1.0.0",
+  "description": "Getting started",
+  "main": "index.js",
+  "repository": "git@github.com:euclid1990/puppeteer.git",
+  "author": "Nguyen Van Vuong",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint . --fix"
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "node ./screenshot-commit/index.js post-commit"
+    }
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "husky": "^4.3.0",
+    "lodash": "^4.17.20",
+    "puppeteer": "^5.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}

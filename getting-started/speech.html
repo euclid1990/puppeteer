@@ -1,0 +1,24 @@
+<button>speak</button>
+
+<script>
+async function speak(text) {
+  const msg = new SpeechSynthesisUtterance();
+  msg.text = text;
+  msg.lang = 'ja';
+  msg.voice = await new Promise(resolve => {
+    // Voice are populated, async.
+    speechSynthesis.onvoiceschanged = (e) => {
+      const voices = window.speechSynthesis.getVoices();
+      const name = 'Google 日本語'; // Note: only works in Google Chrome.
+      resolve(voices.find(voice => voice.name === name));
+    };
+  });
+
+  msg.onend = e => console.log('SPEECH_DONE');
+
+  speechSynthesis.speak(msg);
+}
+
+const button = document.querySelector('button');
+button.addEventListener('click', e => speak(TEXT2SPEECH));
+</script>
